@@ -33,3 +33,6 @@ class QdrantLoader(QdrantVectorStore):
             collection_name=collection_name,
             embedding=embeddings,
         )
+
+vector_store = QdrantLoader(collection_name="amazon_products")
+retriever = vector_store.as_retriever(search_kwargs={"k": 5})
